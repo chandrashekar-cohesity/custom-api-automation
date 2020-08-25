@@ -111,14 +111,9 @@ epoch_end_date_input = '{:f}'.format((((datetime.datetime(int(end_date_input.spl
 epoch_start_date = epoch_start_date_input.split('.')[0] 
 epoch_end_date = epoch_end_date_input.split('.')[0]
 
-#cluster_ip_or_fqdn = "https://chandu-ve-01-vip.pm.cohesity.com/irisservices/api/v1/"
-# start_time = "1596610800000000"
-# end_time = "1597129199999000"
 cluster_ip_or_fqdn = "https://" + cluster_endpoint +"/irisservices/api/v1/"
 
-# desired_list=[]
 get_token(username, 'LOCAL', password)
-#get_token("admin", 'LOCAL', "admin")
 total_logs = get_all_logs_count()
 start_index = 0
 master_list = []
@@ -127,7 +122,7 @@ for i in range(0,10000, 1000):
     if(len(master_list) >= total_logs):
         break
     
-convert_to_csv(master_list, "haha")
+convert_to_csv(master_list, "Auditlogs")
     
     
 
