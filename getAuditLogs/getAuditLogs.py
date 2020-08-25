@@ -98,6 +98,7 @@ cluster_endpoint = raw_input("Enter your cluster FQDN or IP : ")
 username = raw_input("Enter your cluster username(admin) : ") or "admin"
 password = raw_input("Enter your cluster password(admin) : ") or "admin"
 org = raw_input("Enter your cluster org name(LOCAL) : ") or "LOCAL"
+filename = raw_input("Enter the CSV file name(AuditLogs.csv) : ") or "AuditLogs"
 
 date_now = datetime.datetime.now().date().strftime('%m/%d/%Y')
 date_now_epoch = time.mktime(datetime.datetime.now().timetuple())*1000000.0
@@ -122,7 +123,7 @@ for i in range(0,10000, 1000):
     if(len(master_list) >= total_logs):
         break
     
-convert_to_csv(master_list, "Auditlogs")
+convert_to_csv(master_list, filename)
     
     
 
