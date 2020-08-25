@@ -67,7 +67,7 @@ def get_logs(start_index):
     cluster_audit_logs = logs['clusterAuditLogs']
     for logs in cluster_audit_logs:
         temp_log = {}
-        #temp_log["tenantName"] = logs.get["tenant"]["name"]
+        #temp_log["tenantName"] = logs.get["tenant"]["name"] # This field is not present in 6.3.1
         temp_log["timeStamp"] = logs.get("humanTimestamp")
         temp_log[ "userName"] = logs.get("userName")
         temp_log[ "domain"] = logs.get("domain")
