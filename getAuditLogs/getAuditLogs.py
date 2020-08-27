@@ -97,7 +97,7 @@ def get_logs(start_index):
 def convert_to_csv(dict_array, output_file_name):
     keys = ["timeStamp", "userName", "domain", "action", "entityName", "entityType", "entityId", "details", "ip","clusterInfo", "previousRecord", "newRecord" ]
     with open(output_file_name, 'a') as output_file:
-        dict_writer = csv.DictWriter(output_file, keys)
+        dict_writer = csv.DictWriter(output_file, keys, lineterminator = '\n')
         dict_writer.writeheader()
         dict_writer.writerows(dict_array)
     print("Wrote a file "+ output_file_name + " in current directory")
